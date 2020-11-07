@@ -6,8 +6,104 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title></title>
 		<link rel="stylesheet" href="style.css">
-	</head>
-	<body>
+	<style>
+    
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+    .mainloader{
+    /* position: relative; */
+    background: hsl(0, 0%, 0%);
+    /* overflow: hidden; */
+    }
+    .mainloader{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    }
+    .mainloader .wave{
+    margin: 7px;
+    background: #0066ff;
+    width: .4rem;
+    height: 5rem;
+    border-radius: 10px;
+    animation: animate 1s linear infinite;
+    }
+    .mainloader .wave:nth-child(10){
+    animation-delay: -.1s;
+    }
+    .mainloader .wave:nth-child(9){
+    animation-delay: -.2s;
+    }
+    .mainloader .wave:nth-child(8){
+    animation-delay: -.3s;
+    }
+    .mainloader .wave:nth-child(7){
+    animation-delay: -.4s;
+    }
+    .mainloader .wave:nth-child(6){
+    animation-delay: -.5s;
+    }
+    .mainloader .wave:nth-child(5){
+    animation-delay: -.6s;
+    }
+    .mainloader .wave:nth-child(4){
+    animation-delay: -.7s;
+    }
+    .mainloader .wave:nth-child(3){
+    animation-delay: -.8s;
+    }
+    .mainloader .wave:nth-child(2){
+    animation-delay: -.9s;
+    }
+    .mainloader .wave:nth-child(1){
+    /* position: relative; */
+    animation-delay: -01s;
+    }
+    @keyframes animate {
+    0%{transform: scale(0.2, 0);}
+    50%{transform: scale(1, 1);}
+    100%{transform: scale(0.2, 0);}
+    }
+    
+    .mainloader .text{
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: fit-content;
+    }
+    </style>
+  </head>
+  <body>
+    <div id="loader">
+      <div class="mainloader">
+        <div class="text">just a moment please...</div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+      </div>
+      <script>
+      	window.addEventListener('DOMContentLoaded',function(){
+      		loader();
+      	});
+      function loader(){
+      document.getElementById('loader').style.display = 'none';
+      }
+      </script>
+    </div>
 		<div class="home" id="homeTab">
 			<h1>Cartoon run</h1><br>
 			<h6>Run to survive till you survive</h6><br>
@@ -34,7 +130,7 @@
 		<div class="bg-up"><div class="score">score: <input id="score" type="text" value="0" disabled> </div></div>
 		<div id="road" class="path">
 			<div id="control" class="run"></div>
-			<div id="barrier"></div>
+			<div id="barrier" class="obstacle"></div>
 		</div>
 		
 	</body>

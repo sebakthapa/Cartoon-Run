@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title></title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<div class="home" id="homeTab">
+			<h1>Cartoon run</h1><br>
+			<h6>Run to survive till you survive</h6><br>
+			<button class="btn1" onclick="main()">Start</button>
+		</div>
+		<div class="result" id="resultTab">
+			<h1>Game Over</h1>
+			<h6>Better luck next time!</h6><br>
+			Your Score : <input id="resultScore" type="text" value="108" disabled>
+
+			Highest:<span id="highscore"></span>
+
+			<div class="Celebration" style="color:red;font-size: 2.5rem;">
+				
+			</style>Congrats! You beat HighScore</div>
+			<br><br>
+			<button class="btn1" onclick="refreshPage()">Try again</button>
+			<button class="btn2" onClick="refreshPage()">Quit</button>
+		</div>
+		<div class="btn-container">
+			<button id="jp" onclick="jump()"></button>
+			<button id="dg" onclick="dodge()"></button>
+		</div>
+		<div class="bg-up"><div class="score">score: <input id="score" type="text" value="0" disabled> </div></div>
+		<div id="road" class="path">
+			<div id="control" class="run"></div>
+			<div id="barrier"></div>
+		</div>
+		
+	</body>
+	<script src="script.js"></script>
+</html>

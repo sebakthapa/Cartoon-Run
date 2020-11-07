@@ -1,0 +1,272 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	overflow: hidden;
+
+}
+
+
+body{
+position: relative;
+overflow: hidden;
+width: 100%;
+}
+
+.Celebration{
+	display: none;
+	padding-top: 2rem;
+}
+.result,.home{
+	z-index: 10;
+	/* display: none; */
+	color: white;
+	font-family: sans-serif;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0, 0, 0, .9);
+	background-size: 200vw;
+	font-size: 3rem;
+	text-align: center;
+
+}
+
+.result{
+	display: none;
+}
+.home button,
+.result button{
+	/* width: 100vw; */
+	font-size: 3rem;
+	background: #3675ff;
+	cursor: pointer;
+	border: none;
+	padding: 10px;
+	border-radius: 10px;
+}
+
+.home button:hover,
+.result button:hover{
+background: #598dff;
+}
+.result .btn2{
+	background: #e61e1e;
+}
+.result .btn2:hover{
+background: #e84d4d;
+}
+
+#resultScore{
+	color: white;
+	font-size: 3rem;
+	background: transparent;
+	border: none;
+	width: 200px;
+
+}
+
+
+
+.container{
+	width: 100%;
+	height: 100%;
+}
+
+.btn-container{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 110vw;
+	height: 110vh;
+}
+
+#jp,#dg{
+	font-size: 4rem;
+	padding: 30px;
+	width: 54vw;
+	height: 110vh;
+	background: rgba(0, 0, 0, .5);
+	border: none;
+	opacity: 0;
+}
+#jp:focus,
+#dg:focus{
+	outline: none;
+	background: none;
+}
+
+.bg-up{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 110%;
+	height: 100vh;
+	background: linear-gradient(#6494fa 5%,#8baffc 20%, #c7d3fc);
+	z-index: -3;
+}
+
+.score{
+	position: absolute;
+	background: rgba(0, 0, 0, .4);
+	padding: 10px;
+	width: fit-content;
+	height: fit-content;
+	top: 10px;
+	right: 200px;
+	font-size: 2rem;
+	color: white;
+	font-family: sans-serif;
+	
+}
+.score input{
+	color: white;
+	background:transparent ;
+	font-size: 2rem;
+	width: 200px;
+	border: none;
+}
+
+
+.path{
+	overflow: visible;
+	background: linear-gradient(#6a6a6a,#3b3636,black);
+	position: absolute;
+	top: 65vh;
+	/* bottom: 0; */
+	left:0vw;
+	width: 110vw;
+	min-height: 200px;
+	height: 250px;
+	z-index: -2;
+}
+
+.path::before{
+	content: '';
+	position: absolute;
+	background: linear-gradient(90deg, white 0%, white 50%, transparent 50%, transparent 100%);
+	background-size: 400px;
+	width: 110vw;
+	min-width: 80px;
+	min-height: 5px;
+	height: 10px;
+	top: 50%;
+	transform-origin: bottom;
+	transform-style: preserve-3d;
+	transform: perspective(100px) rotateX(10deg);
+	animation: path 14s linear infinite;
+	z-index: -1;
+}
+.pathModify::before{
+	animation: none;
+}
+
+
+.obstacle{
+	border-radius: 10px;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	position: absolute;
+	right: 	-0%;
+	top: 10%;
+	width: 10%;
+	height: 45%;
+	z-index: 10;
+	z-index: 10;
+}
+
+@keyframes obstacle {
+	from{right:0%;}
+	to{right: 110%;}
+}
+
+
+@keyframes path {
+	from{background-position:1000%;}
+	to {background-position: 0;}
+}
+
+
+.run{
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	background-repeat: no-repeat;
+	background-size: cover;
+	transform: translate(100px, -100px);
+	width: calc(600px/4);
+	height: 250px;
+	background: url('run.png');
+	animation: run .6s steps(4) infinite;
+}
+@keyframes run {
+		from{background-position: 0;}
+		to{background-position: -600px;}
+}
+
+
+.jump{
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	background-repeat: no-repeat;
+	background-size: cover;
+	transform: translate(100px, -100px);
+	width: calc(600px/4);
+	height: 250px;
+	background: url('jump.png');
+	animation: jumpt .8s  1, dodge .6s steps(4) 1;
+}
+@keyframes jump {
+	0%{background-position: 0;}
+	100%{background-position: -600px;}
+}
+
+@keyframes jumpt {
+		50%{top:-200px;}
+}
+
+
+.dodge{
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	background-repeat: no-repeat;
+	background-size: cover;
+	transform: translate(100px, -100px);
+	overflow: hidden;
+	width: calc(600px/4);
+	height: 250px;
+	background: url('dodge.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	transform-origin: center;
+	animation: dodge .6s steps(4) 1;
+}
+@keyframes dodge {
+		0%{background-position: 0;}
+		100%{background-position: -600px;}
+	}
+
+
+
+
+
+@media (min-width: 1024px){
+	btn-container button{
+		display: none;
+	}
+}
+
+
+@media (max-width: 950px){
+	.path{
+		/* top: 70vh; */
+	}
+}
+

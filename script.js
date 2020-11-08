@@ -2,6 +2,7 @@ let score;
 
 
 function main(){
+	loader();
 document.getElementById('homeTab').style.display = 'none';
 let hi =  document.getElementById('barrier');
 hi.setAttribute('class', 'obstacle');
@@ -69,6 +70,7 @@ function checkKey(e){
 let images = ['jump1.png', 'jump2.png', 'jump3.png', 'jump4.png'];
 interval();
 function interval(){
+	loader();
 	let randTime =  Math.floor(Math.random() * 2100 + 1000);
 let interval =  setInterval(showObstacle, 2100);
 }
